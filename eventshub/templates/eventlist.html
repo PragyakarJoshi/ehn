@@ -5,6 +5,7 @@
     {% for event in events %}
     <div class="event-container">
     <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
+    <p>{{ event.description|linebreaks|truncatechars:80 }}</p>
     <p>Location: {{ event.location }}</p>
     <p>Date: {{ event.date }}</p>
     <p>Price: Rs.{{ event.price }}/-</p>

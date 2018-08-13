@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }} - EventsHub</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    {% for event in events %}
+    <div class="event-container">
+    <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
+    <p>Location: {{ event.location }}</p>
+    <p>Date: {{ event.date }}</p>
+    <p>Price: Rs.{{ event.price }}/-</p>
+    </div>
+    <br>
+    {% endfor %}
+</body>
+</html>

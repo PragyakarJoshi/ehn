@@ -2,5 +2,29 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-
+    color: rgb(100, 100, 100);
+}
+.event-container {
+    padding: 50px 20px;
+}
+.btn-custom {
+    background-color: rgb(40, 152, 218);
+    color: #ffffff;
+    border: 0;
+    border-radius: 0;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    transition: 0.2s ease;
+}
+.btn-custom:hover, .btn-custom:focus {
+    transition: 0.3s ease;
+    color: #ffffff;
+    background-color: rgb(24, 135, 199);
+}
+thead {
+    background-color: rgb(40, 152, 218);
+    color: #ffffff;
+}
+.event-description {
+    font-size: 18px;
 }

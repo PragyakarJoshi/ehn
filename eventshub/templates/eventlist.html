@@ -1,16 +1,31 @@
-{% extends "index.html" %}
-
+{% extends "index.html" %} 
 {% block content %}
-    <h1>{{ title }}</h1>
-    {% for event in events %}
-    <div class="event-container">
-    <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
-    <p>{{ event.description|linebreaks|truncatechars:80 }}</p>
-    <p>Location: {{ event.location }}</p>
-    <p>Date: {{ event.date }}</p>
-    <p>Price: Rs.{{ event.price }}/-</p>
-    </div>
-    <br>
-    {% endfor %}
-{% endblock content %}
 
+<div class="container event-container">
+    <a href="/events/add" class="btn btn-custom pull-right">Add New Event &nbsp;&nbsp;<span class="glyphicon glyphicon-bullhorn"></span></a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Event Name</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td>{{ event.id }}</td>
+                <td>
+                    <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
+                </td>
+                <td>{{ event.location }}</td>
+                <td>{{ event.date }}</td>
+                <td>Rs. {{ event.price }}/-</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

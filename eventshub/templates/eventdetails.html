@@ -2,6 +2,15 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h1>{{ title}}</h1>
-    <p>{{ instance }}</p>
+<br><br>
+<div class="container">
+    <h1 class="event-title">{{ instance.title }}</h1>
+    <p class="event-description">{{ instance.description }}</p>
+    <p class="event-location">Location: {{ instance.location }}</p>
+    <p class="event-date">Date: {{ instance.date }}</p>
+    <p class="event-time">Time: {{ instance.opening_time }} - {{ instance.closing_time }}</p>
+    <p class="event-price">Price: Rs. {{ instance.price }}/-</p>
+    <p class="event-register">Registration:  <a href="{{ instance.registration }}">{{ instance.registration }}</a></p>
+    <span class="label label-info">{{ instance.category }}</span>
+</div>
 {% endblock content %}
